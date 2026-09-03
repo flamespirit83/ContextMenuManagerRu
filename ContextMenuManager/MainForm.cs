@@ -478,10 +478,10 @@ namespace ContextMenuManager
 
         private void FirstRunDownloadLanguage()
         {
-            if(AppConfig.IsFirstRun && CultureInfo.CurrentUICulture.Name != "zh-CN")
+            if(AppConfig.IsFirstRun && CultureInfo.CurrentUICulture.Name != "en-US")
             {
                 if(AppMessageBox.Show("It is detected that you may be running this program for the first time,\n" +
-                    "and your system display language is not simplified Chinese (zh-CN),\n" +
+                    "and your system display language is not English (en-US),\n" +
                     "do you need to download another language?",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
