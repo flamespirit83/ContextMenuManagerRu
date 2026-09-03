@@ -38,11 +38,11 @@ namespace ContextMenuManager.Methods
         public const string GiteeDonateRaw = "https://gitee.com/flamespirit83/ContextMenuManagerRu/raw/master/Donate.md";
         public const string GiteeDonate = "https://gitee.com/flamespirit83/ContextMenuManagerRu/blob/master/Donate.md";
 
-        public static readonly string AppConfigDir = $@"{Application.StartupPath}\Config";
-        public static readonly string AppDataDir = Environment.ExpandEnvironmentVariables(@"%AppData%\ContextMenuManager");
-        public static readonly string AppDataConfigDir = $@"{AppDataDir}\Config";
-        public static readonly string ConfigDir = Directory.Exists(AppConfigDir) ? AppConfigDir : AppDataConfigDir;
-        public static readonly bool SaveToAppDir = ConfigDir == AppConfigDir;
+        public static readonly string AppConfigDir = $@"{Application.StartupPath}\CMMConfig";
+        public static readonly string AppDataDir = AppConfigDir;
+        public static readonly string AppDataConfigDir = AppConfigDir;
+        public static readonly string ConfigDir = AppConfigDir;
+        public static readonly bool SaveToAppDir = true;
         public static readonly bool IsFirstRun = !Directory.Exists(ConfigDir);
         public static string ConfigIni = $@"{ConfigDir}\Config.ini";
         public static string BackupDir = $@"{ConfigDir}\Backup";
