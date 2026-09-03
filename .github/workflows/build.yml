@@ -25,5 +25,5 @@ jobs:
     - name: Save EXE
       uses: actions/upload-artifact@v4
       with:
-        name: Compiled-ContextMenuManager
+        name: ContextMenuManagerRu
         path: ContextMenuManager\bin\Release\
