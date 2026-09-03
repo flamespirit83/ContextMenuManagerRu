@@ -477,11 +477,11 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>mkdir $(TargetDir)\Config\Languages
-mkdir $(TargetDir)\Config\Dictionaries\Web
+    <PostBuildEvent>mkdir $(TargetDir)\CMMConfig\Languages
+mkdir $(TargetDir)\CMMConfig\Dictionaries\Web
 xcopy $(ProjectDir)\Properties\Resources\Texts\AppLanguageDic.ini $(SolutionDir)\Languages\zh-CN.ini /y
-xcopy $(SolutionDir)\Languages $(TargetDir)\config\Languages /y
-xcopy $(ProjectDir)\Properties\Resources\Texts $(TargetDir)\Config\Dictionaries\Web /y
-del $(TargetDir)\Config\Dictionaries\Web\AppLanguageDic.ini</PostBuildEvent>
+xcopy $(SolutionDir)\Languages $(TargetDir)\CMMConfig\Languages /y
+xcopy $(ProjectDir)\Properties\Resources\Texts $(TargetDir)\CMMConfig\Dictionaries\Web /y
+del $(TargetDir)\CMMConfig\Dictionaries\Web\AppLanguageDic.ini</PostBuildEvent>
   </PropertyGroup>
 </Project>
