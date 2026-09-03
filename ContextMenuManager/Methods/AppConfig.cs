@@ -1,4 +1,4 @@
-﻿using BluePointLilac.Methods;
+using BluePointLilac.Methods;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,25 +18,25 @@ namespace ContextMenuManager.Methods
             LoadLanguage();
         }
 
-        public const string GithubLatest = "https://github.com/BluePointLilac/ContextMenuManager/releases/latest";
-        public const string GithubLatestApi = "https://api.github.com/repos/BluePointLilac/ContextMenuManager/releases/latest";
-        public const string GithubLangsApi = "https://api.github.com/repos/BluePointLilac/ContextMenuManager/contents/languages";
-        public const string GithubLangsRawDir = "https://raw.githubusercontent.com/BluePointLilac/ContextMenuManager/master/languages";
-        public const string GithubShellNewApi = "https://api.github.com/repos/BluePointLilac/ContextMenuManager/contents/ContextMenuManager/Properties/Resources/ShellNew";
-        public const string GithubShellNewRawDir = "https://raw.githubusercontent.com/BluePointLilac/ContextMenuManager/master/ContextMenuManager/Properties/Resources/ShellNew";
-        public const string GithubTexts = "https://raw.githubusercontent.com/BluePointLilac/ContextMenuManager/master/ContextMenuManager/Properties/Resources/Texts";
-        public const string GithubDonateRaw = "https://raw.githubusercontent.com/BluePointLilac/ContextMenuManager/master/Donate.md";
-        public const string GithubDonate = "https://github.com/BluePointLilac/ContextMenuManager/blob/master/Donate.md";
+        public const string GithubLatest = "https://github.com/flamespirit83/ContextMenuManagerRu/releases/latest";
+        public const string GithubLatestApi = "https://api.github.com/repos/flamespirit83/ContextMenuManagerRu/releases/latest";
+        public const string GithubLangsApi = "https://api.github.com/repos/flamespirit83/ContextMenuManagerRu/contents/languages";
+        public const string GithubLangsRawDir = "https://raw.githubusercontent.com/flamespirit83/ContextMenuManagerRu/master/languages";
+        public const string GithubShellNewApi = "https://api.github.com/repos/flamespirit83/ContextMenuManagerRu/contents/ContextMenuManager/Properties/Resources/ShellNew";
+        public const string GithubShellNewRawDir = "https://raw.githubusercontent.com/flamespirit83/ContextMenuManagerRu/master/ContextMenuManager/Properties/Resources/ShellNew";
+        public const string GithubTexts = "https://raw.githubusercontent.com/flamespirit83/ContextMenuManagerRu/master/ContextMenuManager/Properties/Resources/Texts";
+        public const string GithubDonateRaw = "https://raw.githubusercontent.com/flamespirit83/ContextMenuManagerRu/master/Donate.md";
+        public const string GithubDonate = "https://github.com/flamespirit83/ContextMenuManagerRu/blob/master/Donate.md";
 
-        public const string GiteeReleases = "https://gitee.com/BluePointLilac/ContextMenuManager/releases";
-        public const string GiteeLatestApi = "https://gitee.com/api/v5/repos/BluePointLilac/ContextMenuManager/releases/latest";
-        public const string GiteeLangsApi = "https://gitee.com/api/v5/repos/BluePointLilac/ContextMenuManager/contents/languages";
-        public const string GiteeLangsRawDir = "https://gitee.com/BluePointLilac/ContextMenuManager/raw/master/languages";
-        public const string GiteeShellNewApi = "https://gitee.com/api/v5/repos/BluePointLilac/ContextMenuManager/contents/ContextMenuManager/Properties/Resources/ShellNew";
-        public const string GiteeShellNewRawDir = "https://gitee.com/BluePointLilac/ContextMenuManager/raw/master/ContextMenuManager/Properties/Resources/ShellNew";
-        public const string GiteeTexts = "https://gitee.com/BluePointLilac/ContextMenuManager/raw/master/ContextMenuManager/Properties/Resources/Texts";
-        public const string GiteeDonateRaw = "https://gitee.com/BluePointLilac/ContextMenuManager/raw/master/Donate.md";
-        public const string GiteeDonate = "https://gitee.com/BluePointLilac/ContextMenuManager/blob/master/Donate.md";
+        public const string GiteeReleases = "https://gitee.com/flamespirit83/ContextMenuManagerRu/releases";
+        public const string GiteeLatestApi = "https://gitee.com/api/v5/repos/flamespirit83/ContextMenuManagerRu/releases/latest";
+        public const string GiteeLangsApi = "https://gitee.com/api/v5/repos/flamespirit83/ContextMenuManagerRu/contents/languages";
+        public const string GiteeLangsRawDir = "https://gitee.com/flamespirit83/ContextMenuManagerRu/raw/master/languages";
+        public const string GiteeShellNewApi = "https://gitee.com/api/v5/repos/flamespirit83/ContextMenuManagerRu/contents/ContextMenuManager/Properties/Resources/ShellNew";
+        public const string GiteeShellNewRawDir = "https://gitee.com/flamespirit83/ContextMenuManagerRu/raw/master/ContextMenuManager/Properties/Resources/ShellNew";
+        public const string GiteeTexts = "https://gitee.com/flamespirit83/ContextMenuManagerRu/raw/master/ContextMenuManager/Properties/Resources/Texts";
+        public const string GiteeDonateRaw = "https://gitee.com/flamespirit83/ContextMenuManagerRu/raw/master/Donate.md";
+        public const string GiteeDonate = "https://gitee.com/flamespirit83/ContextMenuManagerRu/blob/master/Donate.md";
 
         public static readonly string AppConfigDir = $@"{Application.StartupPath}\Config";
         public static readonly string AppDataDir = Environment.ExpandEnvironmentVariables(@"%AppData%\ContextMenuManager");
@@ -163,14 +163,11 @@ namespace ContextMenuManager.Methods
                 try
                 {
                     string time = GetGeneralValue("LastCheckUpdateTime");
-                    //二进制数据时间不会受系统时间格式影响
                     return DateTime.FromBinary(Convert.ToInt64(time));
                 }
                 catch
                 {
                     return DateTime.MinValue;
-                    //返回文件上次修改时间
-                    //return new FileInfo(Application.ExecutablePath).LastWriteTime;
                 }
             }
             set => SetGeneralValue("LastCheckUpdateTime", value.ToBinary());
