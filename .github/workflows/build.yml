@@ -1,0 +1,29 @@
+name: Auto Compile EXE
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Fix .NET Version
+      run: |
+        $path = "ContextMenuManager\ContextMenuManager.csproj"
+        (Get-Content $path) -replace '<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>', '<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>' | Set-Content $path
+      shell: powershell
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Build Project
+      run: msbuild ContextMenuManager.sln /p:Configuration=Release
+
+    - name: Save EXE
+      uses: actions/upload-artifact@v4
+      with:
+        name: Compiled-ContextMenuManager
+        path: ContextMenuManager\bin\Release\
