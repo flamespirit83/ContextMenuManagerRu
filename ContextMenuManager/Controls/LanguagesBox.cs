@@ -92,7 +92,7 @@ namespace ContextMenuManager.Controls
         public void LoadLanguages()
         {
             cmbLanguages.Items.Clear();
-            cmbLanguages.Items.Add("(default) 简体中文");
+            cmbLanguages.Items.Add("(default) English");
             languages.Clear();
             languages.Add("default");
             pnlTranslators.SuspendLayout();
